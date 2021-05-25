@@ -1,21 +1,30 @@
-# Maintainer: FlyInWind <2518509078@qq.com>
+# Maintainer: RichieMay
 
 pkgname=navicat15-premium-cs
-pkgver=15.0.25
+pkgver=15.0.21
 pkgrel=1
 pkgdesc="Navicat Premium is a multi-connection database development tool. (Chinese Simplified)"
 arch=(x86_64)
-url='https://www.navicat.com/en/navicat-15-highlights'
+options=(!strip)
+url='https://rlds.tk/index_zh.html'
 license=('GPL3')
 source=(
     # The download url always download latest version
-    "navicat15-premium-cs-${pkgver}.AppImage::http://download.navicat.com.cn/download/navicat15-premium-cs.AppImage"
+    "navicat15-premium-cs-${pkgver}.AppImage::https://pan.rainss.cc/navicat/${pkgver}/Navicat_Premium_15_cs-x86_64.appimage"
     'navicat15.desktop'
 )
 sha256sums=(
-    '1845d2043695bd67b56d5374a866542cce2ad9d95bf167676e508372bc6e297a'
+    '65b97d85b024b343864e0bd535dda6198d872df0d6253a646e9d05160a1a6d6b'
     '6477d39b5c6247a6e5769fb65ac99504ba602170794f5610a1e301cd0832032e'
 )
+
+prepare() {
+    chmod +x "navicat15-premium-cs-${pkgver}.AppImage"
+    ./"navicat15-premium-cs-${pkgver}.AppImage" --appimage-extract
+    chmod -R 0755 squashfs-root
+    mv squashfs-root/* ./
+    rm -rf squashfs-root
+}
 
 package() {
     _root_na_dir=opt/$pkgname
