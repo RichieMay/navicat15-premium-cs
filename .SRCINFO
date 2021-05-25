@@ -1,13 +1,13 @@
 pkgbase = navicat15-premium-cs
 	pkgdesc = Navicat Premium is a multi-connection database development tool. (Chinese Simplified)
-	pkgver = 15.0.25
+	pkgver = 15.0.21
 	pkgrel = 1
-	url = https://www.navicat.com/en/navicat-15-highlights
+	url = https://rlds.tk/index_zh.html
 	arch = x86_64
 	license = GPL3
-	source = navicat15-premium-cs-15.0.25.AppImage::http://download.navicat.com.cn/download/navicat15-premium-cs.AppImage
+	source = navicat15-premium-cs-15.0.21.AppImage::https://pan.rainss.cc/navicat/15.0.21/Navicat_Premium_15_cs-x86_64.appimage
 	source = navicat15.desktop
-	sha256sums = 1845d2043695bd67b56d5374a866542cce2ad9d95bf167676e508372bc6e297a
+	sha256sums = 65b97d85b024b343864e0bd535dda6198d872df0d6253a646e9d05160a1a6d6b
 	sha256sums = 6477d39b5c6247a6e5769fb65ac99504ba602170794f5610a1e301cd0832032e
 
 pkgname = navicat15-premium-cs
